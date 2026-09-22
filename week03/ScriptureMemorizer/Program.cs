@@ -1,5 +1,6 @@
 using System;
-
+// I added the input asking the user how many words they want to hide
+// to make it different.
 class Program
 {
     static void Main(string[] args)
@@ -25,7 +26,10 @@ class Program
                 break;
             }
 
-            scripture.HideRandomWords(3);
+            Console.Write("How many words would you like to hide? ");
+            int numberToHide = int.Parse(Console.ReadLine());
+
+            scripture.HideRandomWords(numberToHide);
         }
 
         Console.Clear();
@@ -101,7 +105,7 @@ class Word
  class Scripture
 {
     private Reference reference;
-    
+
     private Word[] words;
 
     public Scripture(Reference reference, string text)
